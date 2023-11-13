@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Recetas;
+use App\Livewire\CrearReceta;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/recetas', Recetas::class);
+    Route::get('/nuevaReceta', CrearReceta::class)->middleware('is_editor');
 });
+
+
+    
